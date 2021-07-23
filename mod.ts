@@ -33,7 +33,10 @@ async function handleRequest(request: Request) {
   }
 
   const index = new URL("public/index.html", import.meta.url);
-  return fetch(index);
+  const response = await fetch(index);
+  const headers = new Headers(response.headers);
+  headers.set("content-type", "text/html; charset=utf-8");
+  return new Response(response.body, { ...response, headers });
 }
 
 function json(jsobj: Parameters<typeof JSON.stringify>[0]) {
