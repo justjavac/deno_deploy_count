@@ -1,0 +1,8 @@
+type Count {
+  key: String! @unique
+  value: Int!
+}
+
+type Query {
+  findCountByKey(key: String!): Count
+}
