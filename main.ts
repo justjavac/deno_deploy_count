@@ -1,3 +1,4 @@
+import { serve } from "https://deno.land/std@0.149.0/http/server.ts";
 import { createCount, findCount, updateCount } from "./count.ts";
 
 async function handleRequest(request: Request) {
@@ -43,6 +44,4 @@ function json(jsobj: Parameters<typeof JSON.stringify>[0]) {
   return new Response(JSON.stringify(jsobj) + "\n");
 }
 
-addEventListener("fetch", (event: FetchEvent) => {
-  event.respondWith(handleRequest(event.request));
-});
+serve(handleRequest);
