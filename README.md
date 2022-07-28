@@ -14,4 +14,4 @@ GET https://count.deno.dev/api/hello
 ## License
 
 [deno_deploy_count](https://github.com/justjavac/deno_deploy_count) is released
-under the MIT License. See the bundled [LICENSE](./LICENSE) file for details.
+under the MIT License. See the bundled [LICENSE](https://github.com/justjavac/deno_deploy_count/blob/main/LICENSE) file for details.
