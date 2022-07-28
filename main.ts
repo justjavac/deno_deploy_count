@@ -29,9 +29,7 @@ async function handleRequest(request: Request) {
 
   const readme = await Deno.readTextFile("./README.md");
 
-  const body = render(readme, {
-    baseUrl: "https://github.com/justjavac/deno_deploy_count/blob/main",
-  });
+  const body = render(readme);
   const html = `<!DOCTYPE html>
     <html lang="en">
       <head>
