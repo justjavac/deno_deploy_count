@@ -27,14 +27,6 @@ async function handleRequest(request: Request) {
     }
   }
 
-  if (pathname.startsWith("/style.css")) {
-    const style = new URL("public/style.css", import.meta.url);
-    const response = await fetch(style);
-    const headers = new Headers(response.headers);
-    headers.set("content-type", "text/css; charset=utf-8");
-    return new Response(response.body, { ...response, headers });
-  }
-
   const readme = await Deno.readTextFile("./README.md");
 
   const body = render(readme, { baseUrl: import.meta.url });
